@@ -1,6 +1,5 @@
 Application Document
 
-Google Chromecast 
 This is currently operational for SoundCloud media. It is non-operational for YouTube media, as the Google Chromecast default received play is incompatible with such media (despite having passed a valid YouTube URI to the default Chromecast receiver application and the correct mimetype (“video/mp4”), it has failed to work).
 
 I have used an AVPlayerViewController for the on-iOS-device playback. This player does not allow the playback of YouTube media. However, by adding the MPVolumeView instance, configured within the method ‘configurePlayerVolumeController’, to the YouTube player view (part of the YouTube API (YTPlayerView)) as a subview, AirPlay playback of YouTube media will work. For this to work with Google Chromecast, a custom receiver player must be built, and the appropriate Chromecast button view must, too, be added as a subview of the YouTube player view instance.
